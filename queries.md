@@ -48,13 +48,15 @@ Query{category_code: {$type: "null"}}
 **7. Order all the companies by their IPO price in a descending order.**
 
 <!-- Your Query Goes Here -->
-
+Sort: {'ipo.valuation_amount': -1}
 <br>
 
 **8. Retrieve the 10 companies with most employees, order by the `number of employees`.**
 
 <!-- Your Query Goes Here -->
-
+Query: { number_of_employees: { $exists: true } }
+Sort: {number_of_employees: -1}
+Limit: 10
 <br>
 
 **9. All the companies founded on the second semester of the year (July to December). Limit your search to 1000 companies.**
